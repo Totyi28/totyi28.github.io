@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jarvis – adatvédelmi tájékoztató</title>
+  <meta name="description" content="Hogyan kezeli a Jarvis a Google-fiók (Gmail, Google Naptár) adatait.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="./">Jarvis</a>
+      <a href="privacy.html" aria-current="page">Adatvédelem</a>
+      <a href="terms.html">Felhasználási feltételek</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Adatvédelmi tájékoztató</h1>
+    <p class="lead">Hatályos: 2026. október 20-tól.</p>
+
+    <p>
+      A Jarvis személyes, egyfelhasználós asztali alkalmazás, amelyet kizárólag a fejlesztője
+      (GitHub: Totyi28) használ a saját Windows-gépén. Ez a tájékoztató leírja, hogyan fér hozzá,
+      hogyan használja, tárolja és osztja meg a Jarvis a Google-felhasználói adatokat.
+    </p>
+
+    <h2>Milyen Google-adatokhoz fér hozzá?</h2>
+    <ul>
+      <li><strong>Gmail</strong> (<code>gmail.modify</code>): a levelek fejlécei és tartalma, a címkék;
+        címkézés, archiválás, piszkozat készítése és – külön jóváhagyás után – levél küldése.</li>
+      <li><strong>Google Naptár – események</strong> (<code>calendar.events</code>): az események olvasása,
+        létrehozása és módosítása.</li>
+      <li><strong>Google Naptár – naptárlista</strong> (<code>calendar.calendarlist.readonly</code>):
+        a naptárak nevének és azonosítójának olvasása.</li>
+    </ul>
+    <p>A hozzáférést a felhasználó a Google hozzájárulási képernyőjén, scope-onként adja meg.</p>
+
+    <h2>Hogyan használja?</h2>
+    <ul>
+      <li>Az adatokat kizárólag a felhasználónak nyújtott funkciókhoz használja: összefoglaló, keresés,
+        címkézés, piszkozat, naptárnézet, eseménykezelés.</li>
+      <li>Minden küldés, törlés, áthelyezés és más visszafordíthatatlan lépés előtt a Jarvis megkérdezi
+        a felhasználót, és csak az ő jóváhagyásával hajtja végre.</li>
+      <li>Az adatokat nem használja reklámra, profilépítésre, hitelképesség megítélésére,
+        és nem használja általános mesterségesintelligencia- vagy gépi tanulási modellek tanítására.</li>
+    </ul>
+
+    <h2>Hol és hogyan tárolja?</h2>
+    <ul>
+      <li>A Gmail- és naptáradatok feldolgozása a felhasználó gépén, a memóriában történik.</li>
+      <li>A levelek tartalma nem kerül adatbázisba és nem kerül naplófájlba.</li>
+      <li>A Google által kiadott hozzáférési token csak a memóriában él. A frissítő token (refresh token)
+        a felhasználó helyi adatmappájában van, a Windows DPAPI-val titkosítva, így csak a felhasználó
+        Windows-fiókja tudja visszafejteni.</li>
+      <li>A Jarvisnak nincs szervere; az adatok nem kerülnek a fejlesztő felhőjébe vagy tárhelyére.</li>
+    </ul>
+
+    <h2>Mesterséges intelligencia</h2>
+    <p>
+      A Jarvis AI-funkcióit (például egy levél összefoglalása vagy egy válaszpiszkozat megírása)
+      az Anthropic Claude modellje végzi, a felhasználó saját Claude-előfizetésén keresztül.
+      Ilyenkor csak az adott kéréshez szükséges levél- vagy eseményrészlet kerül a modellhez,
+      és csak akkor, ha a felhasználó az adott funkciót használja. A levéllisták és a naptárnézetek
+      AI nélkül, közvetlenül a Google API-ból jelennek meg.
+    </p>
+
+    <h2>Kivel osztja meg?</h2>
+    <p>
+      A fent leírt AI-feldolgozáson kívül senkivel. A Google-felhasználói adatok nem kerülnek eladásra,
+      és nem kerülnek más félhez, kivéve ha ezt a felhasználó egy adott műveletnél kifejezetten kéri
+      (például egy általa jóváhagyott levél elküldése a címzettnek), vagy jogszabály írja elő.
+    </p>
+
+    <h2>Google API Services User Data Policy</h2>
+    <p>
+      A Jarvis a Google API-kból kapott adatok használatában és más alkalmazásnak való továbbításában betartja a
+      <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>
+      előírásait, beleértve a <em>Limited Use</em> (korlátozott felhasználás) követelményeit.
+    </p>
+
+    <h2>A hozzáférés visszavonása és az adatok törlése</h2>
+    <ul>
+      <li>A Jarvis hozzáférése bármikor visszavonható a
+        <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> oldalon.</li>
+      <li>A helyi adatmappa törlése minden helyben tárolt adatot, a titkosított frissítő tokent is eltávolítja.</li>
+    </ul>
+
+    <h2>Változások és kapcsolat</h2>
+    <p>
+      A tájékoztató változásait ez az oldal tartalmazza, a hatály dátumával.
+      Kapcsolat: <a href="https://github.com/Totyi28">github.com/Totyi28</a>.
+    </p>
+  </main>
+
+  <footer>
+    <a href="./">Kezdőlap</a> ·
+    <a href="terms.html">Felhasználási feltételek</a>
+  </footer>
+</body>
+</html>
